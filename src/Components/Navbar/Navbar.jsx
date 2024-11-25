@@ -29,7 +29,7 @@ const Navbar = () => {
                             
                         </ul>
                     </div>
-                    <a className="text-4xl font-extrabold">daisyUI</a>
+                    <a className="text-4xl font-extrabold">Career Hub</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu-horizontal px-1 space-x-4 font-medium text-lg">

@@ -6,8 +6,8 @@ const FeaturedJobs = () => {
     const [dataLen, setDataLen] = useState(4)
     useEffect(() => {
         fetch("../../../public/data/jobs.json")
-        .then(res => res.json())
-        .then(data => setFeaturde(data))
+            .then(res => res.json())
+            .then(data => setFeaturde(data))
     }, [])
     return (
         <div className="mx-[5%] lg:mx-[10%] ">
@@ -16,14 +16,18 @@ const FeaturedJobs = () => {
             <div className="grid grid-cols-2 gap-5 mb-10">
                 {
                     featured.slice(0, dataLen).map(jobData =>
-                         <SingleJobCard
-                          key={jobData.id}
-                          jobData = {jobData}
-                          ></SingleJobCard>)
+                        <SingleJobCard
+                            key={jobData.id}
+                            jobData={jobData}
+                        ></SingleJobCard>)
                 }
             </div>
             <div className={dataLen === featured.length ? "hidden" : "block text-center"}>
-                <button onClick={() => setDataLen(featured.length)} className="btn bg-[#9f82ec] text-white font-semibold text-base text-center">Show More</button>
+                    <button
+                        onClick={() => setDataLen(featured.length)}
+                        className="btn bg-[#9f82ec] text-white font-semibold text-base text-center">
+                        Show More
+                    </button>
             </div>
         </div>
     );

@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 
 const SingleJobCard = ({ jobData }) => {
-    const { logo, company_name, location, salary, job_title } = jobData
+    const {id, logo, company_name, location, salary, job_title } = jobData
     return (
         <div className="font-manrop border m-0 p-7 rounded-lg">
             <div className="w-32 mb-7">
@@ -30,7 +31,12 @@ const SingleJobCard = ({ jobData }) => {
                     <p>{salary}</p>
                 </div>
             </div>
-            <button className="btn bg-[#9f82ec] text-white font-semibold text-base">View Details</button>
+            <Link to={`/job/${id}`}>
+            <button
+                className="btn bg-[#9f82ec] text-white font-semibold text-base">
+                View Details
+            </button>
+            </Link>
         </div>
     );
 };
